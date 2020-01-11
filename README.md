@@ -21,9 +21,10 @@ bsconfig.json
 ```json
 {
   "bs-dependencies": [
-    "bs-abort-controller",
+    "bs-broadcast-channel",
   ],
 }
+``
 
 ## Usage
 
@@ -43,7 +44,7 @@ channel->BroadcastChannel.addEventListener("message", (data: MessageEvent.t) => 
   /**
    *  get our data
    */
-  Js.log(data->MessageEvent.data());
+  Js.log(data->MessageEvent.data);
 });
 
 /**
