@@ -28,33 +28,33 @@ bsconfig.json
 ## Usage
 
 ```reason
-open BsAbortController;
+open BsBroadcastChannel;
 
 /**
- * Create an AbortController
+ * Create a channel
  */
-let controller = AbortController.make();
+
+let channel = BroadcastChannel.make("My app");
 
 /**
- * Get the AbortSignal from the controller
+ * Listen to messages
  */
-let signal = AbortController.signal(controller);
-
-/**
- * Register a listener to the AbortSignal
- */
-signal->AbortSignal.addEventListener("abort", () => {
-  Js.log("Aborted");
-});
-
-signal->AbortSignal.addEventListener("abort", () => {
-  Js.log("Aborted as well");
+channel->BroadcastChannel.addEventListener("message", (data: MessageEvent.t) => {
+  /**
+   *  get our data
+   */
+  Js.log(data->MessageEvent.data());
 });
 
 /**
- * Abort the controller
+ * Post message
  */
-AbortController.abort(controller);
+channel->BroadcastChannel.postMessage("Hello World");
+
+/**
+ * Close our channel
+ */
+channel->BroadcastChannel.close();
 ```
 
 ## License
