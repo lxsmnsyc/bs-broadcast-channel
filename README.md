@@ -24,7 +24,7 @@ bsconfig.json
     "bs-broadcast-channel",
   ],
 }
-``
+```
 
 ## Usage
 
