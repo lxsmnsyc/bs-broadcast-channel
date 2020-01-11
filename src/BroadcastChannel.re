@@ -41,7 +41,7 @@ external close: t => unit = "close";
 external postMessage: (t, 'data) => unit = "postMessage";
 
 [@bs.send]
-external addEventListener: (t, string, 'a => 'b) => unit = "addEventListener";
+external addEventListener: (t, string, MessageEvent.t => 'b) => unit = "addEventListener";
 
 [@bs.send]
-external removeEventListener: (t, string, 'a => 'b) => unit = "removeEventListener";
+external removeEventListener: (t, string, MessageEvent.t => 'b) => unit = "removeEventListener";
