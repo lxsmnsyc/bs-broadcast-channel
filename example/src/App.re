@@ -12,7 +12,6 @@ let make = (~channel: BroadcastChannel.t) => {
       Js.log(action); 
       switch (action) {
         | Add(value) => [value, ...state];
-        | _ => state;
       }
     },
     [],
